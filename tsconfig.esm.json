@@ -6,6 +6,6 @@
     "outDir": "lib/esm",
     "declaration": false
   },
-  "include": ["src/", "examples/"],
+  "include": ["src/"],
   "exclude": ["node_modules"]
 }

@@ -32,7 +32,7 @@
   "typings": "lib/cjs/src/index",
   "scripts": {
     "build:worker": "node scripts/build-worker.js",
-    "build": "pnpm run build:worker && tsc --project tsconfig.json && tsc --project tsconfig.esm.json",
+    "build": "npm run build:worker && tsc --project tsconfig.json && tsc --project tsconfig.esm.json",
     "build:examples": "vite build examples",
     "publish:examples": "NODE_ENV=production pnpm run build:examples && gh-pages -d examples/dist -r $GITHUB_REPO_URL",
     "publish:examples:local": "NODE_ENV=production pnpm run build:examples && gh-pages -d examples/dist",

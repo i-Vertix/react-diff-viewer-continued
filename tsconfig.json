@@ -15,6 +15,6 @@
     "types": ["node"],
     "outDir": "lib/cjs"
   },
-  "include": ["src/", "examples/"],
+  "include": ["src/"],
   "exclude": ["node_modules"]
 }

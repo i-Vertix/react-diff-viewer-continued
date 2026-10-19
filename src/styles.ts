@@ -252,9 +252,6 @@ export default (
       border: 0,
       verticalAlign: "baseline",
     },
-    "@media (max-width: 768px)": {
-      minWidth: "unset",
-    },
   });
 
   const lineContent = css({

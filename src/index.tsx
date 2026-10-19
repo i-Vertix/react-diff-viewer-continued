@@ -374,6 +374,7 @@ export interface ReactDiffViewerProps {
    * types (`keyword`, `string`, `tag`, ...) plus `default`.
    */
   highlightTheme?: HighlightTheme
+  hideAdditionalLineNumbers: boolean
 }
 
 export interface ReactDiffViewerState {
@@ -432,6 +433,7 @@ class DiffViewer extends React.Component<
     useDarkTheme: false,
     linesOffset: 0,
     nonce: "",
+    hideAdditionalLineNumbers: false,
   };
 
   public constructor(props: ReactDiffViewerProps) {
@@ -902,7 +904,7 @@ class DiffViewer extends React.Component<
             <pre className={this.styles.lineNumber}>{lineNumber}</pre>
           </td>
         )}
-        {!this.props.splitView && !this.props.hideLineNumbers && (
+        {!this.props.splitView && !this.props.hideLineNumbers && !this.props.hideAdditionalLineNumbers && (
           <td
             onClick={
               additionalLineNumber &&
@@ -1815,7 +1817,7 @@ class DiffViewer extends React.Component<
       >
         <colgroup>
           {!this.props.hideLineNumbers && <col width={"50px"} />}
-          {!splitView && !this.props.hideLineNumbers && <col width={"50px"} />}
+          {!splitView && !this.props.hideLineNumbers && !this.props.hideAdditionalLineNumbers && <col width={"50px"} />}
           {this.props.renderGutter && <col width={"50px"} />}
           <col width={"28px"} />
           <col width={"auto"} />
