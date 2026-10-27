@@ -900,6 +900,7 @@ class DiffViewer extends React.Component<
               [this.styles.diffChanged]: changed,
               [this.styles.highlightedGutter]: highlightLine,
             })}
+            data-line-highlighted={highlightLine ? true : undefined}
           >
             <pre className={this.styles.lineNumber}>{lineNumber}</pre>
           </td>
